@@ -32,5 +32,35 @@ tun-socks  ->  socat  ->  ssh tunnel  ->  socat  ->  socks server
 
 ![image](https://raw.githubusercontent.com/mooshak-vpn/.idea/main/route.jpg)
 
+The `tun-to-socks` is prefered over windows proxy configuration changing for two main reason:
+
+- Assure UDP is supported
+- Some applications don't read proxy configuration of windows
+
+**Alternative** solution is to use `badvpn` project to add support for udp. They already implement tun2socks as well but it does not have the best performance compared to some other solutions. The advantage is that by runnin `badvpn-udpgw` on [server side you can add support for udp](https://code.google.com/archive/p/badvpn/wikis/tun2socks.wiki) which misses in the socks protocol created by ssh client when doing dynamic port forwarding.
+
+
+## Further information
+
+The question of whether `socat` is necessary or not is still open. Finding a good TCP proxy with multiplexing is important for this case.
+OpenSSH already has option for multiplexing. Further information on links below:
+
+- https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing
+- https://blog.scottlowe.org/2015/12/11/using-ssh-multiplexing/
+- https://tenmilesquare.com/resources/software-development/ssh-connection-multiplexing-port-forwarding-and-sock-proxy/
+- https://www.cyberciti.biz/faq/linux-unix-reuse-openssh-connection/
+- https://github.com/3proxy/3proxy
+- https://github.com/ambrop72/badvpn
+
+
+---
+
+## useful links and projects
+
+- https://github.com/monochromegane/smux
+- http://www.dest-unreach.org/socat/doc/socat.html#EXAMPLES
+- https://www.morch.com/2011/07/05/forwarding-snmp-ports-over-ssh-using-socat/
+- https://code.google.com/archive/p/badvpn/wikis/tun2socks.wiki
+- https://github.com/xjasonlyu/tun2socks
 
 
