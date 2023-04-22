@@ -49,8 +49,6 @@ OpenSSH already has option for multiplexing. Further information on links below:
 - https://blog.scottlowe.org/2015/12/11/using-ssh-multiplexing/
 - https://tenmilesquare.com/resources/software-development/ssh-connection-multiplexing-port-forwarding-and-sock-proxy/
 - https://www.cyberciti.biz/faq/linux-unix-reuse-openssh-connection/
-- https://github.com/3proxy/3proxy
-- https://github.com/ambrop72/badvpn
 
 
 ---
@@ -62,5 +60,7 @@ OpenSSH already has option for multiplexing. Further information on links below:
 - https://www.morch.com/2011/07/05/forwarding-snmp-ports-over-ssh-using-socat/
 - https://code.google.com/archive/p/badvpn/wikis/tun2socks.wiki
 - https://github.com/xjasonlyu/tun2socks
+- https://github.com/3proxy/3proxy
+- https://github.com/ambrop72/badvpn
 
 
